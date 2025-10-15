@@ -21,7 +21,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> findAll() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return employeeDoa.findAll();
     }
 
 }
