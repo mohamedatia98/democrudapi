@@ -34,4 +34,25 @@ public class EmployeeImpl implements EmployeeDao {
         return employees;
     }
 
+    // no need to put @Transactional because we will put it on @Service .
+
+    @Override
+    public Employee findById(int theId) {
+        Employee myempolyee = entityManager.find(Employee.class, theId);
+        return myempolyee;
+    }
+
+    @Override
+    public Employee save(Employee employee) {
+        Employee myEmployee = entityManager.merge(employee);
+        return myEmployee;
+    }
+
+    @Override
+    public void deleteById(int theId) {
+        Employee myEmployee = entityManager.find(Employee.class, theId);
+
+        entityManager.remove(myEmployee);
+    }
+
 }
