@@ -10,4 +10,12 @@ public interface EmployeeDao {
 
     List<Employee> findAll();
 
+    // all Crud methods
+
+    Employee findById(int theId);
+
+    Employee save(Employee employee);
+
+    void deleteById(int theId);
+
 }
